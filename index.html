@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spell ILOVEYOU</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <div id="nameGate" class="panel gate-panel">
+        <p class="eyebrow">Before you begin</p>
+        <h1>What's your name?</h1>
+        <label class="name-label" for="playerName">Enter the name you want to be shown in the message:</label>
+        <div class="name-row">
+          <input id="playerName" type="text" maxlength="30" placeholder="e.g. Emma" autocomplete="off" />
+          <button id="startBtn" type="button">Start game</button>
+        </div>
+      </div>
+
+      <div id="gamePanel" class="panel hidden">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Mini word game</p>
+            <h1>Connect the letters</h1>
+          </div>
+          <button id="shuffleBtn" class="secondary-btn" type="button">Shuffle</button>
+        </header>
+
+        <p class="instructions">
+          Tap the letters in order to spell <strong>ILOVEYOU</strong>.
+          Each correct step lights up the path and connects the letters.
+        </p>
+
+        <div class="status-row">
+          <div class="badge">
+            <span class="label">Progress</span>
+            <strong id="progressText">0 / 8</strong>
+          </div>
+          <div class="badge">
+            <span class="label">Best streak</span>
+            <strong id="scoreText">0</strong>
+          </div>
+        </div>
+
+        <div class="board-wrap">
+          <svg id="linkLayer" class="link-layer" aria-hidden="true"></svg>
+          <div id="board" class="board" aria-label="Letter board"></div>
+        </div>
+
+        <div class="message-box" id="messageBox" aria-live="polite">
+          Start with the letter I.
+        </div>
+
+        <div class="actions">
+          <button id="hintBtn" type="button">Show hint</button>
+          <button id="resetBtn" class="secondary-btn" type="button">Reset</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
